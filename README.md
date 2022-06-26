@@ -1,6 +1,6 @@
-# CutefishOS Daemon
+# Piscesys Daemon
 
-CutefishOS backend
+Piscesys backend
 
 ## Dependencies
 
