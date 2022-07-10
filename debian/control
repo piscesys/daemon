@@ -1,7 +1,7 @@
-Source: cutefish-daemon
+Source: pisces-daemon
 Section: devel
 Priority: optional
-Maintainer: CutefishOS <support@cutefishos.com>
+Maintainer: Piscesys Packaging Team <support@piscesys.com>
 Build-Depends: 
 		cmake,
 		libqapt-dev,
@@ -10,10 +10,10 @@ Build-Depends:
 		qtquickcontrols2-5-dev,
 		debhelper (>= 9)
 Standards-Version: 4.6.0
-Homepage: http://cutefishos.com
+Homepage: http://piscesys.com
 Rules-Requires-Root: no
 
-Package: cutefish-daemon
+Package: pisces-daemon
 Architecture: any
 Depends: qml-module-qtquick-controls2,
          qml-module-qtquick2,
@@ -25,4 +25,4 @@ Depends: qml-module-qtquick-controls2,
          qml-module-qtquick-shapes,
          ${misc:Depends},
          ${shlibs:Depends}
-Description: CutefishOS Daemon.
+Description: Piscesys Daemon.

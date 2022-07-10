@@ -1,0 +1,5 @@
+[D-BUS Service]
+Name=com.pisces.Daemon
+Interface=com.pisces.Daemon
+Exec=/usr/bin/pisces-daemon
+User=root

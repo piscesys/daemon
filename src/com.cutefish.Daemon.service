@@ -1,5 +1,0 @@
-[D-BUS Service]
-Name=com.cutefish.Daemon
-Interface=com.cutefish.Daemon
-Exec=/usr/bin/cutefish-daemon
-User=root

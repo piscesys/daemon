@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(cutefish-daemon LANGUAGES CXX)
-set(TARGET cutefish-daemon)
+project(pisces-daemon LANGUAGES CXX)
+set(TARGET pisces-daemon)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -16,7 +16,7 @@ find_package(Qt5 COMPONENTS Core Widgets DBus REQUIRED)
 find_package(QApt REQUIRED)
 
 qt5_add_dbus_adaptor(DBUS_SOURCES
-                     src/com.cutefish.AppManager.xml
+                     src/com.pisces.AppManager.xml
                      src/appmanager.h AppManager)
 
 set(PROJECT_SOURCES
@@ -27,12 +27,12 @@ set(PROJECT_SOURCES
 
 set_source_files_properties(${DBUS_SOURCES} PROPERTIES SKIP_AUTOGEN ON)
 
-add_executable(cutefish-daemon
+add_executable(pisces-daemon
     ${PROJECT_SOURCES}
     ${DBUS_SOURCES}
 )
 
-target_link_libraries(cutefish-daemon PRIVATE
+target_link_libraries(pisces-daemon PRIVATE
     Qt5::Widgets
     Qt5::Core
     Qt5::DBus
@@ -43,5 +43,5 @@ target_link_libraries(cutefish-daemon PRIVATE
 
 install(TARGETS ${TARGET} DESTINATION "/usr/bin/")
 
-install(FILES src/com.cutefish.Daemon.conf DESTINATION "/etc/dbus-1/system.d/")
-install(FILES src/com.cutefish.Daemon.service DESTINATION "/usr/share/dbus-1/system-services/")
+install(FILES src/com.pisces.Daemon.conf DESTINATION "/etc/dbus-1/system.d/")
+install(FILES src/com.pisces.Daemon.service DESTINATION "/usr/share/dbus-1/system-services/")

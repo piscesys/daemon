@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     Kate Leet <kate@cutefishos.com>
+ * Author:     Kate Leet <kate@piscesys.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ AppManager::AppManager(QObject *parent)
     m_backend->init();
 
     QDBusConnection connection = QDBusConnection::systemBus();
-    if (!connection.registerService("com.cutefish.Daemon")) {
+    if (!connection.registerService("com.pisces.Daemon")) {
         qDebug() << "Cannot register D-Bus service";
     }
 
@@ -92,9 +92,9 @@ void AppManager::notifyUninstalling(const QString &packageName)
                          QDBusConnection::sessionBus());
     if (iface.isValid()) {
         QList<QVariant> args;
-        args << "cutefish-daemon";
+        args << "pisces-daemon";
         args << ((unsigned int) 0);
-        args << "cutefish-installer";
+        args << "pisces-installer";
         args << packageName;
         args << tr("Uninstalling");
         args << QStringList();
@@ -112,7 +112,7 @@ void AppManager::notifyUninstallFailure(const QString &packageName)
                          QDBusConnection::sessionBus());
     if (iface.isValid()) {
         QList<QVariant> args;
-        args << "cutefish-daemon";
+        args << "pisces-daemon";
         args << ((unsigned int) 0);
         args << "dialog-error";
         args << packageName;
@@ -132,7 +132,7 @@ void AppManager::notifyUninstallSuccess(const QString &packageName)
                          QDBusConnection::sessionBus());
     if (iface.isValid()) {
         QList<QVariant> args;
-        args << "cutefish-daemon";
+        args << "pisces-daemon";
         args << ((unsigned int) 0);
         args << "process-completed-symbolic";
         args << packageName;

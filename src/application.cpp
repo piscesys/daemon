@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     Kate Leet <kate@cutefishos.com>
+ * Author:     Kate Leet <kate@piscesys.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,13 +29,13 @@ Application::Application(int &argc, char **argv)
 
 int Application::run()
 {
-//    if (!QDBusConnection::systemBus().registerService("com.cutefish.Daemon")) {
+//    if (!QDBusConnection::systemBus().registerService("com.pisces.Daemon")) {
 //        return 0;
 //    } else {
 //        m_appManager = new AppManager(this);
 //    }
 
-//    qDebug() << QDBusConnection::systemBus().registerService("com.cutefish.Daemon") << " registerService";
+//    qDebug() << QDBusConnection::systemBus().registerService("com.pisces.Daemon") << " registerService";
     m_appManager = new AppManager(this);
 
     return QCoreApplication::exec();
